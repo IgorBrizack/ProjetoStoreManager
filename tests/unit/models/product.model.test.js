@@ -5,7 +5,11 @@ const sinon = require('sinon');
 
 const connection = require('../../../src/models/connection');
 
-const { productsFromDb, productById } = require('./mocks/product.model.mock');
+const {
+  productsFromDb,
+  productById,
+  insertedNewProduct
+  } = require('./mocks/product.model.mock');
 
 describe('Teste de unidade do model de products', function () {
   afterEach(sinon.restore)
@@ -25,5 +29,9 @@ describe('Teste de unidade do model de products', function () {
 
     expect(result).to.deep.equal(productById)
   })
+
+  // it('Inserindo um novo produto a nossa tabela', async function () {
+  //   sinon.stub(connection, 'execute').resolves([[insertedNewProduct]])
+  // })
 
 })

@@ -12,6 +12,7 @@ const getProductById = async (id) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
+// inserir um novo produto
 const insertNewProduct = async (newProduct) => {
   if (!newProduct.name) return { type: 'PRODUCT_IS_INVALID', message: '"name" is required' };
   if (newProduct.name.length < 5) {
@@ -21,7 +22,6 @@ const insertNewProduct = async (newProduct) => {
     };
   }
   const product = await productsModel.insert(newProduct);
-  console.log(product);
   return { type: null, message: product };
 };
 
