@@ -30,8 +30,14 @@ describe('Teste de unidade do model de products', function () {
     expect(result).to.deep.equal(productById)
   })
 
-  // it('Inserindo um novo produto a nossa tabela', async function () {
-  //   sinon.stub(connection, 'execute').resolves([[insertedNewProduct]])
-  // })
+  it('Inserindo um novo produto a nossa tabela', async function () {
+    sinon.stub(connection, 'execute').resolves([[insertedNewProduct]])
+
+    const result = await productsModel.insert({
+      "name": "ProdutoX"
+    })
+
+    expect(result).to.deep.equal(insertedNewProduct)
+  })
 
 })
