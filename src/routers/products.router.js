@@ -1,14 +1,11 @@
 const express = require('express');
-const connection = require('../models/connection');
+
+const productsController = require('../controllers/products.controller');
 
 const router = express.Router();
 
-router.get('/', async (_req, res) => {
-  const [result] = await connection.execute(
-    'SELECT * FROM StoreManager.products',
-  );
-  res.status(200).json(result);
-  return result;
-});
+router.get('/', productsController.allProducts);
+
+router.get('/:id', productsController.productById);
 
 module.exports = router;
