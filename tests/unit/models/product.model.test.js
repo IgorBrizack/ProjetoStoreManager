@@ -31,7 +31,7 @@ describe('Teste de unidade do model de products', function () {
   })
 
   it('Inserindo um novo produto a nossa tabela', async function () {
-    sinon.stub(connection, 'execute').resolves([[insertedNewProduct]])
+    sinon.stub(connection, 'execute').resolves([{insertId: 4}])
 
     const result = await productsModel.insert({
       "name": "ProdutoX"

@@ -20,12 +20,12 @@ const productById = [
   }
 ]
 
-const insertedNewProduct = [
+const insertedNewProduct = 
   {
-    "id": 4,
-    "name": "ProdutoX"
+    id: 4,
+    name: "ProdutoX"
   }
-]
+
 
 module.exports = {
   productsFromDb,
