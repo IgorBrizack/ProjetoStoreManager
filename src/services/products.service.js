@@ -38,9 +38,22 @@ const insertAtualizedProduct = async (id, body) => {
   return { type: null, message: { id, name: body.name } };
 };
 
+const deleteProduct = async (id) => {
+  const deletedStatus = await productsModel.deletedProductData(id);
+  if (deletedStatus === 0) {
+    return {
+      type: 'PRODUCT_NOT_FOUND',
+      message: 'Product not found',
+    }; 
+  }
+  
+  return { type: null };
+};
+
 module.exports = { 
   getProducts,
   getProductById,
   insertNewProduct,
   insertAtualizedProduct,
+  deleteProduct,
 };
