@@ -26,8 +26,21 @@ const insertNewProduct = async (newProduct) => {
   return { type: null, message: product };
 };
 
+const insertAtualizedProduct = async (id, body) => {
+  const productAtualized = await productsModel.insertAtualizedData(id, body);
+  if (productAtualized === 0) {
+    return {
+      type: 'PRODUCT_NOT_FOUND',
+      message: 'Product not found',
+    }; 
+  }
+
+  return { type: null, message: { id, name: body.name } };
+};
+
 module.exports = { 
   getProducts,
   getProductById,
   insertNewProduct,
+  insertAtualizedProduct,
 };
