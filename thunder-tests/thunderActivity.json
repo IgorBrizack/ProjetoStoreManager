@@ -158,5 +158,33 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "0142a028-19e3-4e58-9416-9b40b0028d50",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/1",
+    "url": "http://localhost:3000/sales/1",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-09-12T22:55:56.751Z",
+    "modified": "2022-09-12T22:57:47.372Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c6dc2101-94b2-4286-b73a-708d8da1c964",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sale/1",
+    "url": "http://localhost:3000/sale/1",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-09-12T22:56:02.334Z",
+    "modified": "2022-09-12T22:56:02.358Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

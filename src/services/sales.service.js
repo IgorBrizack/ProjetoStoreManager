@@ -24,8 +24,21 @@ const getSaleByIdService = async (id) => {
   return { type: 'SALES_NOT_FOUND', message: 'Sale not found' };
 };
 
+const deleteProduct = async (id) => {
+  const deletedStatus = await salesModel.deletedProductData(id);
+  if (deletedStatus === 0) {
+    return {
+      type: 'PRODUCT_NOT_FOUND',
+      message: 'Sale not found',
+    };
+  }
+
+  return { type: null };
+};
+
 module.exports = {
     insertSales,
   getAllSalesService,
   getSaleByIdService,
+  deleteProduct,
 };
