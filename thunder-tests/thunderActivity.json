@@ -46,12 +46,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-09-12T15:50:23.375Z",
-    "modified": "2022-09-12T15:50:23.448Z",
+    "modified": "2022-09-12T16:58:44.168Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "[\n  {\n    \"productI\": 1,\n    \"quantity\": 1\n  }\n]",
       "form": []
     },
     "tests": []
