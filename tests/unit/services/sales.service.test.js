@@ -58,4 +58,12 @@ describe('Teste unitário do salesService', async function () {
 
     expect(result).to.deep.equal({type: null, message: salesByIdMockService})
   })
+
+  it('Pegando sales pelo id inválido', async function () {
+    // sinon.stub(salesModel, 'getSaleByIdModel').resolves(salesByIdMockService)
+
+    const result = await salesService.getSaleByIdService(999)
+
+    expect(result).to.deep.equal({ type: 'SALES_NOT_FOUND', message: 'Sale not found' })
+  })
 })
