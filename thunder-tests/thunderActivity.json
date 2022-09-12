@@ -1,24 +1,5 @@
 [
   {
-    "_id": "5f5cb1ea-3ae3-4f5b-b5bb-5f138fd5840f",
-    "colId": "history",
-    "containerId": "",
-    "name": "https//localhost:3000/sales",
-    "url": "https//localhost:3000/sales",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2022-09-12T15:49:53.310Z",
-    "modified": "2022-09-12T15:50:08.735Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
-      "form": []
-    },
-    "tests": []
-  },
-  {
     "_id": "4f5bfef7-f479-4829-8fe2-931bb512586b",
     "colId": "history",
     "containerId": "",
@@ -38,22 +19,45 @@
     "tests": []
   },
   {
-    "_id": "d856b285-a4a2-49f9-8f4b-a90a7c1aabda",
+    "_id": "3443c8dc-1212-4f86-beff-dbb3260d4313",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/sales",
-    "url": "http://localhost:3000/sales",
-    "method": "POST",
+    "name": "http://www.localhost:3000/products",
+    "url": "http://www.localhost:3000/products/333",
+    "method": "GET",
     "sortNum": 0,
-    "created": "2022-09-12T15:50:23.375Z",
-    "modified": "2022-09-12T16:58:44.168Z",
+    "created": "2022-09-12T17:21:25.399Z",
+    "modified": "2022-09-12T17:38:34.172Z",
     "headers": [],
     "params": [],
-    "body": {
-      "type": "json",
-      "raw": "[\n  {\n    \"productI\": 1,\n    \"quantity\": 1\n  }\n]",
-      "form": []
-    },
+    "tests": []
+  },
+  {
+    "_id": "77166539-4893-490d-aeb9-fde394e50bc4",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://www.localhost:3000/products/999",
+    "url": "http://www.localhost:3000/products/999",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-12T17:52:15.012Z",
+    "modified": "2022-09-12T17:52:41.801Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cae470f6-b2d8-4370-a54f-048d67647fb5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://www.localhost:3000/products/1",
+    "url": "http://www.localhost:3000/products/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-09-12T17:52:50.091Z",
+    "modified": "2022-09-12T17:52:50.125Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

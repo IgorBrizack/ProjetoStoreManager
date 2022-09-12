@@ -60,5 +60,4 @@ describe('Teste de unidade do salesController', function () {
       "message": "\"productId\" is required"
     })
   })
-
 })
