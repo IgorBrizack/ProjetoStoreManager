@@ -19,8 +19,22 @@ const startSale = async () => {
 
 const getAllSalesModel = async () => {
   const [result] = await connection.execute(
-    'SELECT * FROM StoreManager.sales',
+    `SELECT sale_id, date, product_id, quantity FROM StoreManager.sales_products AS pro
+    INNER JOIN StoreManager.sales AS sa
+    ON pro.sale_id = sa.id`,
   );
+  return result;
+};
+
+const getSaleByIdModel = async (id) => {
+  const [result] = await connection.execute(
+    `SELECT sale_id, date, product_id, quantity FROM StoreManager.sales_products AS pro
+    INNER JOIN StoreManager.sales AS sa
+    ON pro.sale_id = sa.id
+    WHERE sale_id = ?`,
+    [id],
+  );
+
   return result;
 };
 
@@ -28,4 +42,5 @@ module.exports = {
   insert,
   startSale,
   getAllSalesModel,
+  getSaleByIdModel,
 };

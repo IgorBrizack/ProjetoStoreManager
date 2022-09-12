@@ -13,12 +13,19 @@ const insertSales = async (sales) => {
   return { type: null, message: productsSale };
 };
 
-const getAllSalesService = () => {
-  const allProductsFromSale = salesModel.getAllSalesModel();
+const getAllSalesService = async () => {
+  const allProductsFromSale = await salesModel.getAllSalesModel();
   return allProductsFromSale;
+};
+
+const getSaleByIdService = async (id) => {
+  const product = await salesModel.getSaleByIdModel(id);
+  if (product.length) return { type: null, message: product };
+  return { type: 'SALES_NOT_FOUND', message: 'Sale not found' };
 };
 
 module.exports = {
     insertSales,
-    getAllSalesService,
+  getAllSalesService,
+  getSaleByIdService,
 };
