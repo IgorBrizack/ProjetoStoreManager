@@ -1,6 +1,6 @@
 const { productsModel } = require('../models');
 
-// pega todos os produtos
+// pega todos os produto
 const getProducts = async () => {
   const result = await productsModel.findAllProducts();
   return { type: null, message: result };

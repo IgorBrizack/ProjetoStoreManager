@@ -13,7 +13,7 @@ const {
   onlyOneProductMock,
   insertedNewProductMock,
   productNotFoundMock
-} = require('./mocks/product.controller.mock');
+} = require('../controllers/mocks/product.controller.mock');
 
 describe('Teste de unidade do productController', function () {
   afterEach(sinon.restore);
