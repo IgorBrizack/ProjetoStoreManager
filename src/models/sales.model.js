@@ -17,7 +17,15 @@ const startSale = async () => {
   return insertId;
 };
 
+const getAllSalesModel = async () => {
+  const [result] = await connection.execute(
+    'SELECT * FROM StoreManager.sales',
+  );
+  return result;
+};
+
 module.exports = {
   insert,
   startSale,
+  getAllSalesModel,
 };

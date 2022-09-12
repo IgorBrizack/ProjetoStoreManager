@@ -8,6 +8,12 @@ const insertSalesController = async (req, res) => {
   res.status(201).json(message);
 };
 
+const getAllSales = async (req, res) => {
+  const { message } = await salesService.getAllSalesService();
+  res.status(202).json(message);
+};
+
 module.exports = {
   insertSalesController,
+  getAllSales,
 };

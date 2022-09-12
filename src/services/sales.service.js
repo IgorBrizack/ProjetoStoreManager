@@ -9,10 +9,16 @@ const insertSales = async (sales) => {
   }
 
   const saleId = await salesModel.startSale();
-  const product = await salesModel.insert(saleId, sales);
-  return { type: null, message: product };
+  const productsSale = await salesModel.insert(saleId, sales);
+  return { type: null, message: productsSale };
+};
+
+const getAllSalesService = () => {
+  const allProductsFromSale = salesModel.getAllSalesModel();
+  return allProductsFromSale;
 };
 
 module.exports = {
-  insertSales,
+    insertSales,
+    getAllSalesService,
 };
