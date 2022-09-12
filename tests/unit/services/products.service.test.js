@@ -53,6 +53,5 @@ describe('Teste unitário do productService', async function () {
     const result = await productsService.insertNewProduct({ name: 'Martelo de Thor' });
     
     expect(result).to.deep.equal({ type: null, message: { id: 3, name: 'Martelo de Thor' }})
-
   })
 })
