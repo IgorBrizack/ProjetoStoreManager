@@ -4,7 +4,7 @@ const salesModel = require('../../../src/models/sales.model')
 
 const sinon = require('sinon');
 
-const { insertSucces } = require('./mocks/sales.service.mock');
+const { insertSucces, allSalesServiceMock } = require('./mocks/sales.service.mock');
 
 describe('Teste unitário do salesService', async function () {
   afterEach(sinon.restore)
@@ -41,5 +41,13 @@ describe('Teste unitário do salesService', async function () {
     ]);
 
     expect(result).to.deep.equal({ type: 'PRODUCT_IS_INVALID', message: '"productId" is required' })
+  })
+
+  it('pegando todas minhas Sales', async function () {
+    sinon.stub(salesModel, 'getAllSalesModel').resolves(allSalesServiceMock)
+
+    const result = await salesService.getAllSalesService()
+
+    expect(result).to.deep.equal(allSalesServiceMock)
   })
 })

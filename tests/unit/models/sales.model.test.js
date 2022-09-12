@@ -6,7 +6,9 @@ const sinon = require('sinon');
 const connection = require('../../../src/models/connection');
 
 const { productsInsertedWithsuccesMock,
-  newProductsInsertedMock } = require('./mocks/sales.model.mock');
+  newProductsInsertedMock, 
+  allSalesMock,
+  allSalesByIdMock} = require('./mocks/sales.model.mock');
 
 describe('Teste de unidade do model de products', function () {
   afterEach(sinon.restore)
@@ -21,5 +23,17 @@ describe('Teste de unidade do model de products', function () {
     sinon.stub(connection, 'execute').resolves([productsInsertedWithsuccesMock])
     const resultSales = await salesModel.insert(3, newProductsInsertedMock)
     expect(resultSales).to.be.deep.equal(productsInsertedWithsuccesMock)
+  })
+
+  it('Testando se todas as vendas são retornadas', async function () {
+    sinon.stub(connection, 'execute').resolves([allSalesMock])
+    const resultSales = await salesModel.getAllSalesModel()
+    expect(resultSales).to.be.deep.equal(allSalesMock)
+  })
+
+  it('Testando se todas as vendas por id são retornadas', async function () {
+    sinon.stub(connection, 'execute').resolves([allSalesByIdMock])
+    const resultSales = await salesModel.getSaleByIdModel(1)
+    expect(resultSales).to.be.deep.equal(allSalesByIdMock)
   })
 })
