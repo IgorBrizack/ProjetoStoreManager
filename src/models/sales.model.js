@@ -1,3 +1,4 @@
+const camelize = require('camelize');
 const connection = require('./connection');
 
 const insert = async (saleId, sales) => {
@@ -23,19 +24,19 @@ const getAllSalesModel = async () => {
     INNER JOIN StoreManager.sales AS sa
     ON pro.sale_id = sa.id`,
   );
-  return result;
+  return camelize(result);
 };
 
 const getSaleByIdModel = async (id) => {
   const [result] = await connection.execute(
-    `SELECT sale_id, date, product_id, quantity FROM StoreManager.sales_products AS pro
+    `SELECT date, product_id, quantity FROM StoreManager.sales_products AS pro
     INNER JOIN StoreManager.sales AS sa
     ON pro.sale_id = sa.id
     WHERE sale_id = ?`,
     [id],
   );
 
-  return result;
+  return camelize(result);
 };
 
 module.exports = {
