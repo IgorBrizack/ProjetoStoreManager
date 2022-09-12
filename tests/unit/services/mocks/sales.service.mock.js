@@ -35,7 +35,21 @@ const allSalesServiceMock = [
   }
 ]
 
+const salesByIdMockService = [
+  {
+    "date": "2022-09-12T20:41:55.000Z",
+    "productId": 1,
+    "quantity": 5
+  },
+  {
+    "date": "2022-09-12T20:41:55.000Z",
+    "productId": 2,
+    "quantity": 10
+  }
+]
+
 module.exports = {
   insertSucces,
-  allSalesServiceMock
+  allSalesServiceMock,
+  salesByIdMockService
 }
