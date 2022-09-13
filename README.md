@@ -61,7 +61,6 @@ O projeto Store Manager consiste na criação de uma API em conexão com um banc
 
 - Criar uma aplicação usando o Express.js;
 - Criar uma API RESTful utilizando a arquitetura MSC (Model-Service-Controller);
-- Validar dados das requisições com a biblioteca Joi;
 - Implementar testes unitários com Mocha, Chai e Sinon.
 
 
