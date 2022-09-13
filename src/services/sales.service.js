@@ -36,9 +36,16 @@ const deleteProduct = async (id) => {
   return { type: null };
 };
 
+const insertAtualizedSale = async (id, body) => {
+  await salesModel.insertAtualizedData(id, body);
+
+  return { type: null, message: { saleId: id, itemsUpdated: body } };
+};
+
 module.exports = {
     insertSales,
   getAllSalesService,
   getSaleByIdService,
   deleteProduct,
+  insertAtualizedSale,
 };

@@ -48,10 +48,22 @@ const deletedProductData = async (id) => {
   return affectedRows;
 };
 
+const insertAtualizedData = async (saleId, atualizedSale) => {
+  atualizedSale.forEach(async (element) => {
+    await connection.execute(
+      `UPDATE StoreManager.sales_products
+        SET quantity = ?
+        WHERE sale_id = ? AND product_id = ?`,
+      [element.quantity, saleId, element.productId],
+    );
+  });
+};
+
 module.exports = {
   insert,
   startSale,
   getAllSalesModel,
   getSaleByIdModel,
   deletedProductData,
+  insertAtualizedData,
 };

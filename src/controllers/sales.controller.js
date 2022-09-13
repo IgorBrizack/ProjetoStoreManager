@@ -28,9 +28,19 @@ const deleteProductById = async (req, res) => {
   res.status(204).json(message);
 };
 
+const attSaleById = async (req, res) => {
+  const { body } = req;
+  const { id } = req.params;
+
+  const { message } = await salesService.insertAtualizedSale(id, body);
+
+  res.status(200).json(message);
+};
+
 module.exports = {
   insertSalesController,
   getAllSales,
   getSaleById,
   deleteProductById,
+  attSaleById,
 };
