@@ -8,6 +8,8 @@ const { nameFieldMiddleware } = require('../middlewares');
 
 router.get('/', productsController.allProducts);
 
+router.get('/search', productsController.searchTerm);
+
 router.get('/:id', productsController.productById);
 
 router.post('/', productsController.insertProduct);

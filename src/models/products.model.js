@@ -44,7 +44,7 @@ const deletedProductData = async (id) => {
 
   return affectedRows;
 };
-
+ 
 module.exports = {
   findAllProducts,
   findById,

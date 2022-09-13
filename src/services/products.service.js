@@ -50,10 +50,17 @@ const deleteProduct = async (id) => {
   return { type: null };
 };
 
+const searchByTerm = async (term) => {
+  const getSearchByTerm = await productsModel.findAllProducts();
+  const data = getSearchByTerm.filter((el) => el.name.includes(term));
+  return { type: null, message: data };
+};
+
 module.exports = { 
   getProducts,
   getProductById,
   insertNewProduct,
   insertAtualizedProduct,
   deleteProduct,
+  searchByTerm,
 };
